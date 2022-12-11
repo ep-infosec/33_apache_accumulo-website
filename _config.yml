@@ -1,0 +1,86 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+safe: false
+title: Apache Accumulo™
+email: dev@accumulo.apache.org
+description: > # this means to ignore newlines until "url:"
+  The Apache Accumulo™ sorted, distributed key/value store is a robust, scalable,
+  high performance data storage and retrieval system.
+url: "https://accumulo.apache.org" # the base hostname & protocol for your site
+twitter_username: ApacheAccumulo
+exclude: [vendor]
+latest_release: 2.1.0
+javadoc_version: 2.1.0
+num_home_posts: 5
+javadoc_base: "https://static.javadoc.io/org.apache.accumulo"
+docs_baseurl: "/docs/2.x"
+
+# Build settings
+markdown: kramdown
+
+# Collection names cannot contain periods
+collections:
+  docs-2:
+    output: true
+    permalink: "/docs/2.x/:path"
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  -
+    scope:
+      path: "tour"
+      type: "pages"
+    values:
+      layout: "tour"
+      permalink: "/tour/:basename/"
+  -
+    scope:
+      path: "tour-jshell"
+      type: "pages"
+    values:
+      layout: "tour-jshell"
+      permalink: "/tour-jshell/:basename/"
+  -
+    scope:
+      path: "_posts/blog"
+      type: "posts"
+    values:
+      layout: "post"
+      category: "blog"
+  -
+    scope:
+      path: "_posts/release"
+      type: "posts"
+    values:
+      layout: "release"
+      category: "release"
+      permalink: "/:categories/:title/"
+  -
+    scope:
+      path: ""
+      type: "docs-2"
+    values:
+      layout: "docs-2"
+      title_prefix: "Accumulo Documentation - "
+      version: "2.x"
+      latest_release: "2.1.0"
+      javadoc_version: "2.1.0"
+      docs_baseurl: "/docs/2.x"
+      javadoc_base: "https://static.javadoc.io/org.apache.accumulo"
+      skiph1fortitle: "true"
+      gh_branch: "main"
+
+#whitelist: [jekyll-redirect-from]
+#plugins_dir: ./_plugins
+plugins: [jekyll-redirect-from]

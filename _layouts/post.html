@@ -1,0 +1,12 @@
+---
+layout: default
+---
+<p>
+{% if page.author %}<b>Author: </b>&nbsp;&nbsp;{{ page.author }}<br>{% endif %}
+<b>Date: </b>&nbsp;&nbsp;{{ page.date | date_to_string }}<br>
+{% if page.reviewers %}<b>Reviewer(s) </b> &nbsp;&nbsp;{{ page.reviewers }}<br>{% endif %}
+</p>
+
+{{ content }}
+
+<p><strong>View all posts in the <a href="{{ site.baseurl }}/news">news archive</a></strong></p>
